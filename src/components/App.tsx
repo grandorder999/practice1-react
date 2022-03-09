@@ -1,6 +1,7 @@
 import React from "react";
 import { ChangeEvent, useState, FC } from "react";
 import "../style.css"; //CSSはパスだけ記載する
+import { Test } from "./test";
 
 export const App: FC = () => {
   // テキストボックスstate
@@ -41,6 +42,7 @@ export const App: FC = () => {
             </li>
           ))}
         </ul>
+        <Test></Test>
       </div>
     </div>
   );
