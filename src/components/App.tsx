@@ -1,5 +1,6 @@
 import React from "react";
 import { ChangeEvent, useState, FC } from "react";
+import "../style.css";
 
 export const App: FC = () => {
   const [text, setText] = useState<string>("");
