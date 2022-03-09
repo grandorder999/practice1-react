@@ -8,8 +8,8 @@ export const App: FC = () => {
   // メモ一覧state
   const [memoList, setMemoList] = useState<Array<string>>([]);
   // 入力した値の紐付け
-  const onChangeText = (e: ChangeEvent<HTMLInputElement>) => {
-    setText(e.target.value);
+  const onChangeText = (event: ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value);
   };
   //メモを追加するメソッド
   const onClickAdd = () => {
