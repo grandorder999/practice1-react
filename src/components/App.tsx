@@ -1,6 +1,6 @@
 import React from "react";
 import { ChangeEvent, useState, FC } from "react";
-import "../style.css";
+import "../style.css"; //CSSはパスだけ記載する
 
 export const App: FC = () => {
   const [text, setText] = useState<string>("");
