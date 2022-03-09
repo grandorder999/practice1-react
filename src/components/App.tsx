@@ -3,17 +3,22 @@ import { ChangeEvent, useState, FC } from "react";
 import "../style.css"; //CSSはパスだけ記載する
 
 export const App: FC = () => {
+  // テキストボックスstate
   const [text, setText] = useState<string>("");
+  // メモ一覧state
   const [memoList, setMemoList] = useState<Array<string>>([]);
+  // 入力した値の紐付け
   const onChangeText = (e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
+  //メモを追加するメソッド
   const onClickAdd = () => {
     const newMemoList = [...memoList];
     newMemoList.push(text);
     setMemoList(newMemoList);
     setText("");
   };
+  // メモを削除するメソッド(引数は添え字)
   const onClickDelete = (index: number) => {
     const newMemoList = [...memoList];
     newMemoList.splice(index, 1);
@@ -31,7 +36,7 @@ export const App: FC = () => {
         <ul>
           {memoList.map((memo, index) => (
             <li key={memo}>
-              <p>{memo}</p>
+              <span className="memo">{memo}</span>
               <button onClick={() => onClickDelete(index)}>削除</button>
             </li>
           ))}
